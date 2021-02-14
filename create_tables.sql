@@ -46,3 +46,10 @@ CREATE TABLE stock_price (
 CREATE INDEX ON stock_price (stock_id, dt DESC);
 
 SELECT create_hypertable('stock_price', 'dt');
+
+
+select count(*) num_mentions, stock_id, symbol
+from mention join stock on stock.id = mention.stock_id
+where dt > '2021-02-13' 
+group by stock_id, symbol
+order by num_mentions DESC

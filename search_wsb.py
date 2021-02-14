@@ -18,7 +18,7 @@ for row in rows:
 
 api = PushshiftAPI()
 
-start_time = int(datetime.datetime(2021, 1, 30).timestamp())
+start_time = int(datetime.datetime(2021, 2, 13).timestamp())
 
 submissions = api.search_submissions(after=start_time,
                                      subreddit='wallstreetbets',
